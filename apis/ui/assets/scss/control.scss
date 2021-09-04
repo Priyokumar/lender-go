@@ -1,0 +1,37 @@
+.input-container {
+  .label-container {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 2px;
+    label {
+      font-size: 11px;
+      font-weight: 500;
+    }
+    .required{
+      color: red;
+      font-weight: 600;
+  }
+  }
+  select {
+    font-size: 11px;
+    height: 24px;
+    border: 2px solid #0000008c;
+    border-radius: 2px;
+  }
+  input {
+    font-size: 11px;
+    width: 100%;
+    border: 2px solid #0000008c;
+    border-radius: 2px;
+    height: 24px;
+    &:disabled {
+      background-color: rgb(66 66 66 / 7%);
+      border-color: #d1d1d1;
+    }
+  }
+  .error {
+    color: red;
+    font-size: 12px;
+    font-weight: 500;
+  }
+}

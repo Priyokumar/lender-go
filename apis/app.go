@@ -10,7 +10,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-const port string = ":8000"
+const port string = ":80"
 
 func init() {
 

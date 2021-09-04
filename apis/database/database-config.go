@@ -15,7 +15,7 @@ var DB *gorm.DB
 func InitiateDB() error {
 
 	log.Println("Initializing DB")
-	dsn := "host=localhost user=lender password=lender dbname=lender_dev port=5432 sslmode=disable"
+	dsn := "host=localhost user=lender_prod password=lender_prod dbname=lender_prod port=5432 sslmode=disable"
 
 	db, err := gorm.Open(postgres.Open(dsn), &gorm.Config{})
 

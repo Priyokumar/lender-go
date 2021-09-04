@@ -1,0 +1,153 @@
+{
+  "configVersion": 1,
+  "timestamp": 1630767242538,
+  "index": "/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/113-es2015.603ac704848b546ad006.js",
+        "/113-es5.603ac704848b546ad006.js",
+        "/214-es2015.ecd66b991e7fb894211f.js",
+        "/214-es5.ecd66b991e7fb894211f.js",
+        "/249-es2015.7072a480ca6f4af33cad.js",
+        "/249-es5.7072a480ca6f4af33cad.js",
+        "/399-es2015.6519c09b33b8d507707f.js",
+        "/399-es5.6519c09b33b8d507707f.js",
+        "/487-es2015.70e853ae86aef02d69b8.js",
+        "/487-es5.70e853ae86aef02d69b8.js",
+        "/501-es2015.660963c57efc4a27f46a.js",
+        "/501-es5.660963c57efc4a27f46a.js",
+        "/603-es2015.244ea70343a89034f4f8.js",
+        "/603-es5.244ea70343a89034f4f8.js",
+        "/727-es2015.f4e879ebb6dbc30af085.js",
+        "/727-es5.f4e879ebb6dbc30af085.js",
+        "/764-es2015.0d37178d5cbf373bfdb8.js",
+        "/764-es5.0d37178d5cbf373bfdb8.js",
+        "/785-es2015.084c6f894b768d37cf2e.js",
+        "/785-es5.084c6f894b768d37cf2e.js",
+        "/792-es2015.bcc6154852fc09912594.js",
+        "/792-es5.bcc6154852fc09912594.js",
+        "/82-es2015.88a8004e024bbff9e2bd.js",
+        "/82-es5.88a8004e024bbff9e2bd.js",
+        "/common-es2015.80b8c4d2a559a232a116.js",
+        "/common-es5.80b8c4d2a559a232a116.js",
+        "/favicon.ico",
+        "/index.html",
+        "/main-es2015.ce0094ceaeed9637242e.js",
+        "/main-es5.ce0094ceaeed9637242e.js",
+        "/manifest.webmanifest",
+        "/polyfills-es2015.7ce580384960606bd356.js",
+        "/polyfills-es5.12e04d46ae2ee035b56c.js",
+        "/runtime-es2015.05263a79a5415a3220e7.js",
+        "/runtime-es5.05263a79a5415a3220e7.js",
+        "/styles.5e6450f56b218ec5c750.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/assets/css/dialog-form.css",
+        "/assets/css/form-common.css",
+        "/assets/icon/rupee-indian.svg",
+        "/assets/icons/icon-128x128.png",
+        "/assets/icons/icon-144x144.png",
+        "/assets/icons/icon-152x152.png",
+        "/assets/icons/icon-192x192.png",
+        "/assets/icons/icon-384x384.png",
+        "/assets/icons/icon-512x512.png",
+        "/assets/icons/icon-72x72.png",
+        "/assets/icons/icon-96x96.png",
+        "/assets/images/avatar.png",
+        "/assets/scss/color.scss",
+        "/assets/scss/control.scss",
+        "/assets/scss/font.scss"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "/113-es2015.603ac704848b546ad006.js": "b786fd99c22db8117fde48c77a658ca8a59b2def",
+    "/113-es5.603ac704848b546ad006.js": "5b2b435879361a1d20e1b867a6b1354d5f5faa4e",
+    "/214-es2015.ecd66b991e7fb894211f.js": "979bfd2cd3ec15eee110eea4e60bff1d6bf07417",
+    "/214-es5.ecd66b991e7fb894211f.js": "c2b03992cae0f9e24ee6597902d287f6662aeb2c",
+    "/249-es2015.7072a480ca6f4af33cad.js": "c2737954887a86a43c1e9c39e0b0372bd03471de",
+    "/249-es5.7072a480ca6f4af33cad.js": "d9217b93c44644bc0828ce7c08e5c5b4ac78d428",
+    "/399-es2015.6519c09b33b8d507707f.js": "8071b05cfde5ada7bc5571c30aaa6fdeb5bfedf1",
+    "/399-es5.6519c09b33b8d507707f.js": "0b40a09b04b9a440c9a6b52cf2edfb98e73acaa2",
+    "/487-es2015.70e853ae86aef02d69b8.js": "8658b9726988874af13fcd28a03faf37f806a1b9",
+    "/487-es5.70e853ae86aef02d69b8.js": "0d66b229b600a3b516de83ce894aa3b369b5d72e",
+    "/501-es2015.660963c57efc4a27f46a.js": "1b7982b261f46c381512bd48cb7e2d772c1f5235",
+    "/501-es5.660963c57efc4a27f46a.js": "b72ed5ec959086d5e20f7f0f0d9328964a65fe4a",
+    "/603-es2015.244ea70343a89034f4f8.js": "23a1e54a7a14e6ac443b3e3cabe708b3a4d1488d",
+    "/603-es5.244ea70343a89034f4f8.js": "5888cb021ebde965c7e25bb743725a84002e8c26",
+    "/727-es2015.f4e879ebb6dbc30af085.js": "b6660146615af54f174f6dbafcd65eee86dfccdb",
+    "/727-es5.f4e879ebb6dbc30af085.js": "ca3a7e3df50f5073eccc6838406c5db263b4e1a9",
+    "/764-es2015.0d37178d5cbf373bfdb8.js": "54ea818c33ba205bca3c1cff912b556f4e9a00f3",
+    "/764-es5.0d37178d5cbf373bfdb8.js": "ac3627474c093603aeedc8da1afddc774db37ec1",
+    "/785-es2015.084c6f894b768d37cf2e.js": "b8fdbe103142d11ff98681471b196161f9b25c30",
+    "/785-es5.084c6f894b768d37cf2e.js": "44fb7d0522e727efecf950adfe211aef6c21cf10",
+    "/792-es2015.bcc6154852fc09912594.js": "7b7845c61b9a1725d13b6c4b02b594fab0b2e0f9",
+    "/792-es5.bcc6154852fc09912594.js": "caf9aa2156c922cb72c8dbb9ec1c9713a69d4d4e",
+    "/82-es2015.88a8004e024bbff9e2bd.js": "d529f4ba022e7f290f3e1097d1d43494d4c8613d",
+    "/82-es5.88a8004e024bbff9e2bd.js": "5dfc726e288607adbdeaf260454002f81cd63570",
+    "/assets/css/dialog-form.css": "27d5fc87e490ed1adac68103a2154306eb404552",
+    "/assets/css/form-common.css": "a7935224e4a9c4af67d0f6d32f51c74ad26ab03d",
+    "/assets/icon/rupee-indian.svg": "c962a6889996e14e6ac79aa6432dacf3d890ed62",
+    "/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
+    "/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
+    "/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
+    "/assets/icons/icon-192x192.png": "1abd80d431a237a853ce38147d8c63752f10933b",
+    "/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
+    "/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
+    "/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
+    "/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
+    "/assets/images/avatar.png": "4eefebb37f7569bb4a59503b68d8dd5829a6faae",
+    "/assets/scss/color.scss": "50940e85a2dde6949cc60e5f367cf80c7bf5e99f",
+    "/assets/scss/control.scss": "7b94cb23d2afa1de550d9ffb4be4f4f26cc51ead",
+    "/assets/scss/font.scss": "85c15e725072f3cc175d849d3785bc507c7c183e",
+    "/common-es2015.80b8c4d2a559a232a116.js": "5df3692d7c53cbb69169986694fbf29c29a9c838",
+    "/common-es5.80b8c4d2a559a232a116.js": "1d3125bd4a2440a3f8b6e75c4f8219e8a189c90b",
+    "/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
+    "/index.html": "6c343d0cf2a3e069e68e5341abd79858bfc2f620",
+    "/main-es2015.ce0094ceaeed9637242e.js": "2f37a0f3840589bf78187b1b58391b972e53b10e",
+    "/main-es5.ce0094ceaeed9637242e.js": "b86f4ff1393d16590c6a75499ecb04d61e4b526d",
+    "/manifest.webmanifest": "322a936f302df7e62dc32071462c770bcf5260c6",
+    "/polyfills-es2015.7ce580384960606bd356.js": "755a62d7d3c6fd22bc4376ca1e8cf948006a2f50",
+    "/polyfills-es5.12e04d46ae2ee035b56c.js": "a20c697b6ec338ff19f02de4e0bc43c35c7328f4",
+    "/runtime-es2015.05263a79a5415a3220e7.js": "4b21a162bef6b3aa2ab7286e6acf19c37bb02d26",
+    "/runtime-es5.05263a79a5415a3220e7.js": "95609594cd2de1ee054042f12dcaa3fb85101ffc",
+    "/styles.5e6450f56b218ec5c750.css": "5896b02d0327b8941112556eaccd76940e46225c"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ],
+  "navigationRequestStrategy": "performance"
+}
