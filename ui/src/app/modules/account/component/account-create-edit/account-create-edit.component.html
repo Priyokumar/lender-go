@@ -1,0 +1,159 @@
+<main>
+  <div class="form-min-height m-3 bg-white">
+    <div class="d-flex justify-content-between p-1 ps-4 bg-gold">
+      <span class="font-400 font-banner" style="line-height: 35px"
+        >Account</span
+      >
+      <div>
+        <button class="btn btn-cancel" routerLink="/accounts">
+          <mat-icon class="white-icon">clear</mat-icon>&nbsp;Cancel
+        </button>
+        <button class="btn btn-save" (click)="save()" [disabled]="!form.valid">
+          <mat-icon class="white-icon">save_alt</mat-icon>&nbsp;Save Account
+        </button>
+      </div>
+    </div>
+
+    <div class="form-content">
+      <div class="customer-product-content pb-3">
+        <!-- Lead -->
+        <div class="customer">
+          <div class="d-flex align-items-center search">
+            <div class="select-text">Lead</div>
+            <button mat-icon-button (click)="selectLead()">
+              <mat-icon class="font-green">search</mat-icon>
+            </button>
+            <div
+              class="tooltip-message mat-elevation-z12"
+              *ngIf="showTooltip && !id"
+            >
+              Select Lead
+            </div>
+            <mat-icon class="tooltip-caret" *ngIf="showTooltip && !id"
+              >arrow_drop_down</mat-icon
+            >
+          </div>
+          <div class="d-flex field">
+            <label>Lead Id :</label>
+            <div>{{ selectedLead?.leadId }}</div>
+          </div>
+          <div class="d-flex field">
+            <label>Lead Status :</label>
+            <div>{{ selectedLead?.status }}</div>
+          </div>
+          <div class="d-flex field">
+            <label>Amount :</label>
+            <div>{{ selectedLead?.amount }}</div>
+          </div>
+        </div>
+        <!-- Customer -->
+        <div class="customer mt-3">
+          <div class="d-flex align-items-center search mb-2">
+            <div class="select-text">Customer</div>
+          </div>
+          <div class="d-flex field">
+            <label>Customer Id :</label>
+            <div>{{ (selectedLead?.customer | async)?.customerId }}</div>
+          </div>
+          <div class="d-flex field">
+            <label>Customer Name :</label>
+            <div>{{ (selectedLead?.customer | async)?.name }}</div>
+          </div>
+          <div class="d-flex field">
+            <label>Gender :</label>
+            <div>{{ (selectedLead?.customer | async)?.gender }}</div>
+          </div>
+          <div class="d-flex field">
+            <label>Mobile Number :</label>
+            <div>{{ (selectedLead?.customer | async)?.mobileNo }}</div>
+          </div>
+        </div>
+        <!-- Product -->
+        <div class="product mt-3">
+          <div class="d-flex align-items-center search mb-2">
+            <div class="select-text">Product</div>
+          </div>
+          <div class="d-flex field">
+            <label>Product Id :</label>
+            <div>{{ (selectedLead?.product | async)?.productId }}</div>
+          </div>
+          <div class="d-flex field">
+            <label>Product Name :</label>
+            <div>{{ (selectedLead?.product | async)?.name }}</div>
+          </div>
+          <div class="d-flex field">
+            <label>Interest :</label>
+            <div>{{ (selectedLead?.product | async)?.interest }}</div>
+          </div>
+          <div class="d-flex field">
+            <label>Frequency :</label>
+            <div>{{ (selectedLead?.product | async)?.frequency }}</div>
+          </div>
+        </div>
+      </div>
+      <hr />
+      <div class="account">
+        <div class="input-container" [ngClass]="{ spacer: !id }">
+          <div class="label-container">
+            <label for="">Account No. </label>
+          </div>
+          <input
+            type="text"
+            [formControl]="accountNoCtrl"
+            id="amountCtrl"
+          />
+        </div>
+        <div class="input-container">
+          <div class="label-container">
+            <label for="">Date of creation <span class="required">*</span></label>
+            <div
+              class="error"
+              *ngIf="
+                (createdAtCtrl.errors && createdAtCtrl.dirty) ||
+                createdAtCtrl.touched
+              "
+            >
+              <div *ngIf="createdAtCtrl.hasError('required')">Required</div>
+            </div>
+          </div>
+
+          <input type="date" [formControl]="createdAtCtrl" />
+        </div>
+        <div class="input-container">
+          <div class="label-container">
+            <label for="">Repayment Date <span class="required">*</span></label>
+            <div
+              class="error"
+              *ngIf="
+                (repaymentDateCtrl.errors && repaymentDateCtrl.dirty) ||
+                repaymentDateCtrl.touched
+              "
+            >
+              <div *ngIf="repaymentDateCtrl.hasError('required')">Required</div>
+            </div>
+          </div>
+
+          <input type="date" [formControl]="repaymentDateCtrl" />
+        </div>
+        <div class="input-container">
+          <div class="label-container">
+            <label for="">Status <span class="required">*</span></label>
+            <div
+              class="error"
+              *ngIf="
+                (statusCtrl.errors && statusCtrl.dirty) || statusCtrl.touched
+              "
+            >
+              <div *ngIf="statusCtrl.hasError('required')">Required</div>
+            </div>
+          </div>
+          <select class="w-100" [formControl]="statusCtrl">
+            <option [value]="status.val" *ngFor="let status of accountStatuses">
+              {{ status.val }}
+            </option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

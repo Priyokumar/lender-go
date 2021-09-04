@@ -1,0 +1,128 @@
+<main>
+  <div class="form-min-height m-3 bg-white">
+    <div class="d-flex justify-content-between p-1 ps-4 bg-gold">
+      <span class="font-400 font-banner" style="line-height: 35px">Lead</span>
+      <div>
+        <button class="btn btn-cancel" routerLink="/leads">
+          <mat-icon class="white-icon">clear</mat-icon>&nbsp;Cancel
+        </button>
+        <button
+          class="btn btn-save"
+          (click)="save()"
+          [disabled]="!form.valid || !selectedCustomer || !selectedProduct"
+        >
+          <mat-icon class="white-icon">save_alt</mat-icon>&nbsp;Save Lead
+        </button>
+      </div>
+    </div>
+
+    <div class="form-content">
+      <div class="customer-product-content">
+        <!-- Customer -->
+        <div class="customer">
+          <div class="d-flex align-items-center search">
+            <div class="select-text">Customer</div>
+            <button mat-icon-button (click)="selectCustomer()">
+              <mat-icon class="font-green">search</mat-icon>
+            </button>
+            <div class="tooltip-message mat-elevation-z12" *ngIf="showTooltip && !id">Select Customer</div>
+            <mat-icon class="tooltip-caret" *ngIf="showTooltip && !id">arrow_drop_down</mat-icon>
+          </div>
+          <div class="d-flex field">
+            <label>Customer Id :</label>
+            <div>{{ selectedCustomer?.customerId }}</div>
+          </div>
+          <div class="d-flex field">
+            <label>Customer Name :</label>
+            <div>{{ selectedCustomer?.name }}</div>
+          </div>
+          <div class="d-flex field">
+            <label>Gender :</label>
+            <div>{{ selectedCustomer?.gender }}</div>
+          </div>
+          <div class="d-flex field">
+            <label>Mobile Number :</label>
+            <div>{{ selectedCustomer?.mobileNo }}</div>
+          </div>
+        </div>
+        <!-- Product -->
+        <div class="product">
+          <div class="d-flex align-items-center search">
+            <div class="select-text">Product</div>
+            <button mat-icon-button (click)="selectProduct()">
+              <mat-icon class="font-green">search</mat-icon>
+            </button>
+            <div class="tooltip-message mat-elevation-z12" *ngIf="showTooltip && !id">Select Product</div>
+            <mat-icon class="tooltip-caret"  *ngIf="showTooltip && !id">arrow_drop_down</mat-icon>
+          </div>
+          <div class="d-flex field">
+            <label>Product Id :</label>
+            <div>{{ selectedProduct?.productId }}</div>
+          </div>
+          <div class="d-flex field">
+            <label>Product Name :</label>
+            <div>{{ selectedProduct?.name }}</div>
+          </div>
+          <div class="d-flex field">
+            <label>Interest :</label>
+            <div>{{ selectedProduct?.interest }}</div>
+          </div>
+          <div class="d-flex field">
+            <label>Frequency :</label>
+            <div>{{ selectedProduct?.frequency }}</div>
+          </div>
+        </div>
+        <!-- Lead -->
+        <div class="lead">
+          <div class="heading">Lead details</div>
+          <div class="d-flex spacer pb-3" *ngIf="id">
+            <label>Lead Id :</label>
+            <div class="font-text">{{ lead?.leadId }}</div>
+          </div>
+          <div class="input-container w-50" [ngClass]="{ spacer: !id }">
+            <div class="label-container">
+              <label for="">Amount</label>
+              <div
+                class="error"
+                *ngIf="
+                  (amountCtrl.errors && amountCtrl.dirty) || amountCtrl.touched
+                "
+              >
+                <div *ngIf="amountCtrl.hasError('required')">
+                  Amount is required
+                </div>
+              </div>
+            </div>
+            <input type="text" [formControl]="amountCtrl" id="amountCtrl" />
+          </div>
+          <div class="input-container w-50" [ngClass]="{ spacer: !id }">
+            <div class="label-container">
+              <label for="">Monthly Interest</label>
+            </div>
+            <input type="text" [formControl]="monthlyInterestCtrl" />
+          </div>
+          <div class="input-container w-50"  *ngIf="id">
+            <div class="label-container">
+              <label for="">Status</label>
+              <div
+                class="error"
+                *ngIf="
+                  (statusCtrl.errors && statusCtrl.dirty) || statusCtrl.touched
+                "
+              >
+                <div *ngIf="statusCtrl.hasError('required')">
+                  Status is required
+                </div>
+              </div>
+            </div>
+            <select class="w-100" [formControl]="statusCtrl">
+              <option [value]="status.val" *ngFor="let status of statuses">
+                {{ status.val }}
+              </option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

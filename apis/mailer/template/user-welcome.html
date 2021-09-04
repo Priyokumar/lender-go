@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<body style="overflow: hidden;">
+    <header>Dear {{.name}},</header>
+    <section style="margin-top: 2rem;">
+        <span>Welcome to <strong>Lender</strong>. Your credentials has been generated.</span>
+        <div style="margin-top: 1rem;margin-bottom: 5px;">
+            Here are the credentials:
+        </div>
+        <div>
+            Username: <strong>{{.username}}</strong>
+        </div>
+        <div>
+            Password: <strong>{{.password}}</strong>
+        </div>
+    </section>
+    <footer style="margin-top: 5rem;">
+        <div>Thank you,</div>
+        <strong>Team Lender</strong>
+    </footer>
+</body>
+
+</html>

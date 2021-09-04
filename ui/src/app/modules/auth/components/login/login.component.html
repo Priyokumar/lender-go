@@ -1,0 +1,43 @@
+
+<div>
+    <div class="bg-1 p-4 d-flex flex-column align-items-center content">
+        <div class="jumbotron font-white">
+            <h2>Lender</h2>
+            <p>Powered by prilax group</p>
+          </div>
+        <div class="attach-body">
+            
+            <div class="login-content p-5">
+                <div class="mat-elevation-z1 w-100 p-5 bg-white ">
+                    <h2 class="font-300">Sign In</h2>
+                    <hr>
+                    <br>
+                    <br>
+                    <form>
+                        <p>
+                            <mat-form-field class="w-100">
+                                <mat-label>Email</mat-label>
+                                <input matInput placeholder="Enter your email" [formControl]="emailFormCtl">
+                                <mat-error *ngIf="emailFormCtl.invalid">Email is required.</mat-error>
+                            </mat-form-field>
+                        </p>
+                        <p>
+                            <mat-form-field class="w-100">
+                                <input type="password" matInput placeholder="Enter your password" [formControl]="passwordFormCtl">
+                                <mat-error *ngIf="passwordFormCtl.invalid">Password is required.</mat-error>
+                            </mat-form-field>
+                        </p>
+                        <div class="text-right">
+                            <button class="w-100 bg-grey font-white" type="submit" mat-raised-button
+                                (click)="login()">Login</button>
+                        </div>
+                        <div class="d-flex justify-content-end mt-4">
+                            <a routerLink="/auth/reset-password">Forget password?</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bg-1 bg-light-grey h-100"></div>
+</div>

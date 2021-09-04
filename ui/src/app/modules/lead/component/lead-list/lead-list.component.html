@@ -1,0 +1,139 @@
+<div class="m-3">
+  <div class="d-flex justify-content-between p-1 ps-4 bg-gold">
+    <span class="font-400 font-banner" style="line-height: 35px">Leads</span>
+    <div>
+      <button class="btn btn-save" [routerLink]="['/leads/add']" *ngIf="(roles | async)?.includes(userRole.INVESTOR)">
+        <mat-icon class="white-icon">add</mat-icon>&nbsp;Add Lead
+      </button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 p-0 table-header mb-5">
+      <div class="no-shadow w-100">
+        <table
+          mat-table
+          [dataSource]="dataSource"
+          matSort
+          [ngStyle]="{ display: dataSource ? '' : 'none' }"
+        >
+          <ng-container matColumnDef="leadId">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Lead ID</th>
+            <td mat-cell *matCellDef="let row" class="name-class">
+              {{ row.leadId }}
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="customer">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>
+              Customer Name
+            </th>
+            <td mat-cell *matCellDef="let row" class="name-class">
+              {{(row.customer | async)?.name }}
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="email">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>
+              Email
+            </th>
+            <td mat-cell *matCellDef="let row" class="name-class">
+              {{ (row.customer | async)?.email }}
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="mobileNo">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>
+              Mobile No.
+            </th>
+            <td mat-cell *matCellDef="let row" class="name-class">
+              {{ (row.customer | async)?.mobileNo }}
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="amount">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>
+              Amount
+            </th>
+            <td mat-cell *matCellDef="let row" class="name-class">
+              {{ row.amount | inr }}
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="product">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>
+              Product Name
+            </th>
+            <td mat-cell *matCellDef="let row" class="name-class">
+              {{ (row.product | async)?.name }}
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="interest">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>
+              Interest %
+            </th>
+            <td mat-cell *matCellDef="let row" class="name-class">
+              {{ (row.product | async)?.interest }}
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="frequency">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Frequency</th>
+            <td mat-cell *matCellDef="let row" class="name-class">
+              {{ (row.product | async)?.frequency }}
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="status">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Status</th>
+            <td mat-cell *matCellDef="let row" class="name-class">
+              <div
+                class="font-500"
+                [ngClass]="{
+                  'font-orange': row.status === leadStatus.CLOSED,
+                  'font-green': row.status === leadStatus.QUALIFIED,
+                  'font-secondary-blue': row.status === leadStatus.NEW,
+                  'font-red': row.status === leadStatus.DIS_QUALIFIED
+                }"
+              >
+                {{ row.status | uppercase }}
+              </div>
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="action">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header></th>
+            <td mat-cell *matCellDef="let row" class="text-right">
+              <mat-icon
+                style="color: rgb(6, 80, 51); cursor: pointer"
+                [routerLink]="'/leads/' + row.id + '/edit'"
+                >edit
+              </mat-icon>
+             <!--  &nbsp;
+              <mat-icon
+                style="color: firebrick; cursor: pointer"
+                (click)="delete(row.id)"
+                >delete</mat-icon
+              > -->
+            </td></ng-container
+          >
+
+          <tr mat-header-row *matHeaderRowDef="columns; sticky: true"></tr>
+          <tr
+            mat-row
+            *matRowDef="let row; columns: columns; let i = index"
+          ></tr>
+        </table>
+        <div
+          class="d-flex justify-content-center align-items-center"
+          style="height: 40vh"
+          *ngIf="!dataSource || !dataSource.data"
+        >
+          <div>
+            <h4 class="font-grey font-300">No lead to display.</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

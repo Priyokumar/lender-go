@@ -1,0 +1,41 @@
+u {
+  color: rgb(13, 80, 126);
+  font-weight: 500;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.account-content {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  .field {
+    margin-bottom: 2px;
+  }
+  .heading {
+    border-bottom: 1px solid #5d5d5d38;
+    .title {
+      font-size: 15px;
+    }
+  }
+}
+
+.view-repayments {
+  margin-top: 10px;
+  color: rgb(5, 97, 139);
+  cursor: pointer;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+h3 {
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.705);
+}
+hr {
+  margin-top: 1px !important;
+  margin-bottom: 15px !important;
+}

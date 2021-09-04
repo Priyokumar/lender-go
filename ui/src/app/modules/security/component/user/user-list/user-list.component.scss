@@ -1,0 +1,17 @@
+
+
+.mat-chip{
+    font-size: 12px !important;
+    letter-spacing: .5px;
+    font-weight: 300 !important;
+    width: 69px !important;
+}
+
+.mat-chip.mat-standard-chip.mat-chip-selected.mat-primary {
+    background-color: #000000d1 !important;
+    color: #fff;
+}
+
+.mat-chip.mat-standard-chip{
+    min-height: 28px !important;
+}

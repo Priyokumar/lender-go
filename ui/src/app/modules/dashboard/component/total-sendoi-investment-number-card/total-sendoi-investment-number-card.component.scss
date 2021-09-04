@@ -1,0 +1,21 @@
+
+.bg-white {
+    height: calc(100% - 12px);
+}
+
+.number{
+    font-size: 30px;
+    font-weight: 300;
+}
+
+.card {
+    background: rgb(134, 6, 208);
+    background: linear-gradient(
+      135deg,
+      rgba(134, 6, 208, 1) 55%,
+      rgba(214, 6, 213, 0.8463760504201681) 100%
+    );
+    color: #ffffff !important;
+    border: none !important;
+  }
+  

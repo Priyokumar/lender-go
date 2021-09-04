@@ -1,0 +1,22 @@
+@import '../../../../../assets/scss/control.scss';
+
+.content {
+  padding: 30px;
+  .value {
+    font-weight: 500;
+  }
+
+  .body-content{
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      .input-container{
+        padding-bottom: 15px;
+      }
+      .field{
+        display: flex;
+        padding-bottom: 15px;
+        font-weight: 500;
+      }
+  }
+}

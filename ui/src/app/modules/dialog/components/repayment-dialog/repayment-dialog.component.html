@@ -1,0 +1,81 @@
+<div class="content">
+  <div class="heading d-flex justify-content-between align-items-center">
+    <h2>Repayment</h2>
+    <mat-icon (click)="dialogRef.close()" class="cursor-pointer"
+      >close</mat-icon
+    >
+  </div>
+  <div class="body-content mt-4">
+    <div class="form-content">
+      <div class="field">
+        <label>Monthly interest to be paid :</label>
+        <div>{{ (data.lead | async)?.monthlyInterest | inr }}</div>
+      </div>
+      <div class="input-container">
+        <div class="label-container">
+          <label for="">Amount Paid <span class="required">*</span></label>
+          <div
+            class="error"
+            *ngIf="
+              (amountPaidCtrl.errors && amountPaidCtrl.dirty) ||
+              amountPaidCtrl.touched
+            "
+          >
+            <div *ngIf="amountPaidCtrl.hasError('required')">Required</div>
+          </div>
+        </div>
+
+        <input type="number" [formControl]="amountPaidCtrl" class="w-100" />
+      </div>
+      <div class="input-container">
+        <div class="label-container">
+          <label for="">Due Amount<span class="required">*</span></label>
+        </div>
+        <input type="number" [formControl]="dueAmountCtrl" class="w-100" />
+      </div>
+      <div class="input-container">
+        <div class="label-container">
+          <label for="">Date of payment <span class="required">*</span></label>
+          <div
+            class="error"
+            *ngIf="
+              (dateOfPaymentCtrl.errors && dateOfPaymentCtrl.dirty) ||
+              dateOfPaymentCtrl.touched
+            "
+          >
+            <div *ngIf="dateOfPaymentCtrl.hasError('required')">Required</div>
+          </div>
+        </div>
+
+        <input type="date" [formControl]="dateOfPaymentCtrl" class="w-100" />
+      </div>
+      <div class="input-container">
+        <div class="label-container">
+          <label for="">Status <span class="required">*</span></label>
+        </div>
+        <select class="w-100" [formControl]="statusCtrl">
+          <option [value]="status.val" *ngFor="let status of repaymentStatuses">
+            {{ status.val }}
+          </option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <div class="footer mt-3 d-flex justify-content-end align-items-center">
+    <button
+      mat-raised-button
+      class="bg-dark-green me-3 font-white"
+      (click)="repay()"
+      [disabled]="!formGroup.valid"
+    >
+      Repay
+    </button>
+    <button
+      mat-raised-button
+      (click)="dialogRef.close()"
+      class="bg-red font-white"
+    >
+      Cancel
+    </button>
+  </div>
+</div>

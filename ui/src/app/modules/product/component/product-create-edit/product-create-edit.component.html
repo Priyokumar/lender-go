@@ -1,0 +1,93 @@
+<main>
+  <div class="form-min-height m-3 bg-white">
+    <div class="d-flex justify-content-between p-1 ps-4 bg-gold">
+      <span class="font-400 font-banner" style="line-height: 35px"
+        >Product</span
+      >
+      <div>
+        <button class="btn btn-cancel" routerLink="/products">
+          <mat-icon class="white-icon">clear</mat-icon>&nbsp;Cancel
+        </button>
+        <button class="btn btn-save" (click)="save()" [disabled]="!form.valid">
+          <mat-icon class="white-icon">save_alt</mat-icon>&nbsp;Save Product
+        </button>
+      </div>
+    </div>
+
+    <div class="form-content">
+      <div class="input-container" [ngClass]="{ spacer: !id }">
+        <div class="label-container">
+          <label for="">Product ID</label>
+        </div>
+        <input
+          type="text"
+          [formControl]="productIdCtrl"
+          id="productIdCtrl"
+          class="w-100"
+        />
+      </div>
+      <div class="input-container">
+        <div class="label-container">
+          <label for="">Name <span class="required">*</span></label>
+          <div
+            class="error"
+            *ngIf="(nameCtrl.errors && nameCtrl.dirty) || nameCtrl.touched"
+          >
+            <div *ngIf="nameCtrl.hasError('required')">Required</div>
+          </div>
+        </div>
+        <input type="text" [formControl]="nameCtrl" class="w-100" />
+      </div>
+      <div class="input-container">
+        <div class="label-container">
+          <label for="">Type <span class="required">*</span></label>
+          <div
+            class="error"
+            *ngIf="(typeCtrl.errors && typeCtrl.dirty) || typeCtrl.touched"
+          >
+            <div *ngIf="typeCtrl.hasError('required')">Required</div>
+          </div>
+        </div>
+        <select class="w-100" [formControl]="typeCtrl">
+          <option [value]="type.val" *ngFor="let type of types">
+            {{ type.val }}
+          </option>
+        </select>
+      </div>
+      <div class="input-container">
+        <div class="label-container">
+          <label for="">Interest % <span class="required">*</span></label>
+          <div
+            class="error"
+            *ngIf="
+              (interestCtrl.errors && interestCtrl.dirty) ||
+              interestCtrl.touched
+            "
+          >
+            <div *ngIf="interestCtrl.hasError('required')">Required</div>
+          </div>
+        </div>
+        <input type="number" [formControl]="interestCtrl" class="w-100" />
+      </div>
+      <div class="input-container">
+        <div class="label-container">
+          <label for="">Frequency <span class="required">*</span></label>
+          <div
+            class="error"
+            *ngIf="
+              (frequencyCtrl.errors && frequencyCtrl.dirty) ||
+              frequencyCtrl.touched
+            "
+          >
+            <div *ngIf="frequencyCtrl.hasError('required')">Required</div>
+          </div>
+        </div>
+        <select class="w-100" [formControl]="frequencyCtrl">
+          <option [value]="type.val" *ngFor="let type of interestFrequencies">
+            {{ type.val }}
+          </option>
+        </select>
+      </div>
+    </div>
+  </div>
+</main>

@@ -1,0 +1,120 @@
+<main>
+  <div class="form-min-height m-3 bg-white">
+    <div class="d-flex justify-content-between p-1 pl-4 bg-gold">
+      <span class="font-400 font-banner" style="line-height: 35px"
+        >Customer</span
+      >
+      <div>
+        <button class="btn btn-cancel" routerLink="/customers">
+          <mat-icon class="white-icon">clear</mat-icon>&nbsp;Cancel
+        </button>
+        <button class="btn btn-save" (click)="save()" [disabled]="!form.valid || emailExists || mobileNoExists">
+          <mat-icon class="white-icon">save_alt</mat-icon>&nbsp;Save Customer
+        </button>
+      </div>
+    </div>
+
+    <div class="form-content">
+      <div class="input-container" [ngClass]="{ spacer: !id }">
+        <div class="label-container">
+          <label for="">Customer Id</label>
+        </div>
+        <input
+          type="text"
+          [formControl]="customerIdCtrl"
+          id="customerIdCtrl"
+          class="w-100"
+        />
+      </div>
+      <div class="input-container">
+        <div class="label-container">
+          <label for="">Name <span class="required">*</span></label>
+          <div
+            class="error"
+            *ngIf="(nameCtrl.errors && nameCtrl.dirty) || nameCtrl.touched"
+          >
+            <div *ngIf="nameCtrl.hasError('required')">Required</div>
+          </div>
+        </div>
+        <input type="text" [formControl]="nameCtrl" class="w-100" />
+      </div>
+      <div class="input-container">
+        <div class="label-container">
+          <label for="">Mobile Number <span class="required">*</span></label>
+          <div
+            class="error"
+            *ngIf="
+              (mobileNoCtrl.errors && mobileNoCtrl.dirty) ||
+              mobileNoCtrl.touched
+            "
+          >
+            <div *ngIf="mobileNoCtrl.hasError('required')">Required</div>
+          </div>
+          <div class="error" *ngIf="mobileNoExists">Mobile No. has already been used!</div>
+        </div>
+        <input type="text" [formControl]="mobileNoCtrl" class="w-100" />
+      </div>
+      <div class="input-container">
+        <div class="label-container">
+          <label for="">Email<span class="required">*</span></label>
+          <div
+            class="error"
+            *ngIf="(emailCtrl.errors && emailCtrl.dirty) || emailCtrl.touched"
+          >
+            <div *ngIf="emailCtrl.hasError('required')">Required</div>
+          </div>
+          <div class="error" *ngIf="emailExists">Email has already been used!</div>
+        </div>
+        <input type="text" [formControl]="emailCtrl" class="w-100" />
+      </div>
+      <div class="input-container">
+        <div class="label-container">
+          <label for="">Occupation</label>
+        </div>
+        <input type="text" [formControl]="occupationCtrl" class="w-100" />
+      </div>
+      <div class="input-container">
+        <div class="label-container">
+          <label for="">Gender <span class="required">*</span></label>
+          <div
+            class="error"
+            *ngIf="
+              (genderCtrl.errors && genderCtrl.dirty) || genderCtrl.touched
+            "
+          >
+            <div *ngIf="genderCtrl.hasError('required')">Required</div>
+          </div>
+        </div>
+        <select class="w-100" [formControl]="genderCtrl">
+          <option [value]="gender.val" *ngFor="let gender of genders">
+            {{ gender.val }}
+          </option>
+        </select>
+      </div>
+      <div class="input-container">
+        <div class="label-container">
+          <label for="">Status <span class="required">*</span></label>
+          <div
+            class="error"
+            *ngIf="
+              (statusCtrl.errors && statusCtrl.dirty) || statusCtrl.touched
+            "
+          >
+            <div *ngIf="statusCtrl.hasError('required')">Required</div>
+          </div>
+        </div>
+        <select class="w-100" [formControl]="statusCtrl">
+          <option [value]="status.val" *ngFor="let status of statuses">
+            {{ status.val }}
+          </option>
+        </select>
+      </div>
+      <div class="input-container">
+        <div class="label-container">
+          <label for="">Address</label>
+        </div>
+        <input type="text" [formControl]="addressCtrl" class="w-100" />
+      </div>
+    </div>
+  </div>
+</main>

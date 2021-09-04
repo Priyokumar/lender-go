@@ -1,0 +1,26 @@
+@import "../../../../../../assets/scss/control.scss";
+
+main {
+  height: calc(100vh - 36px);
+  overflow-y: auto;
+  .form-content {
+    padding: 10px 60px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 25px;
+    .input-container {
+      width: calc(100% / 4);
+      padding-right: 25px;
+    }
+    .heading {
+      font-size: 13px;
+      font-weight: 500;
+    }
+    .input-container {
+      padding-bottom: 20px;
+      .multiple-select{
+        height: 50px !important;
+      }
+    }
+  }
+}

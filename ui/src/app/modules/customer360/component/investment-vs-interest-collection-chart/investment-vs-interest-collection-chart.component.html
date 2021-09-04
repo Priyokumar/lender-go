@@ -1,0 +1,9 @@
+<div class="m-2 p-3 bg-white h-100">
+  <div class="title mb-4 text-center font-500">
+    Investment Vs Interest Collection
+  </div>
+  <div class="text-center pt-4 mt-4 font-500 font-banner no-data" [ngClass]="{ 'hide': data.totalInterest || data.totalPrincipal }">
+    No data available!
+  </div>
+  <canvas id="overall-customer-investment-interest-collection-chart" [ngClass]="{ 'hide': data.totalInterest == 0 && data.totalPrincipal == 0 }"></canvas>
+</div>

@@ -1,0 +1,180 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/scss/bootstrap.scss";
+@import "./assets/scss/color.scss";
+@import "./assets/scss/font.scss";
+@import "./assets/css/form-common.css";
+@import "./assets/css/dialog-form.css";
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  font-family: $font-roboto;
+  font-size: $text;
+  font-weight: 400;
+  color: $black1;
+}
+.no-text-deco {
+  text-decoration: none;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+button:focus {
+  outline: none !important;
+}
+
+th {
+  font-size: $text !important;
+}
+
+.row {
+  margin: 0;
+}
+
+.main {
+  min-height: 80vh;
+}
+
+.display-none {
+  display: none !important;
+}
+
+.letter-spacing-1 {
+  letter-spacing: 1px;
+}
+
+.letter-spacing-2 {
+  letter-spacing: 2px;
+}
+
+.letter-spacing-3 {
+  letter-spacing: 3px;
+}
+
+.no-shadow {
+  box-shadow: none !important;
+}
+
+.btn {
+  color: #ffffff;
+  font-size: 12px;
+  padding: 0.2rem 0.75rem;
+  margin: 3px 2px;
+  height: 28px;
+}
+
+.btn-save {
+  background: #000000d1;
+}
+
+.btn-edit {
+  background: #4696d2;
+}
+
+.btn-cancel {
+  background: #ee3f64;
+}
+
+.z-index5 {
+  z-index: 5;
+}
+
+// Mat
+.mat-icon {
+  vertical-align: middle !important;
+}
+
+.mat-dialog-container {
+  padding: 0 !important;
+  border-radius: 0 !important;
+}
+.mat-spinner-vertical-spacer {
+  height: 4px;
+}
+
+// Important
+.mat-form-field-can-float .mat-input-server:focus + .mat-form-field-label-wrapper .mat-form-field-label,
+.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {
+  font-size: 20px !important;
+  font-weight: 400 !important;
+  color: #252525 !important;
+}
+
+.mat-form-field-appearance-fill.mat-form-field-disabled .mat-form-field-flex {
+  background-color: rgb(0 0 0 / 5%);
+}
+
+.mat-form-field-appearance-fill .mat-form-field-flex {
+  background-color: rgb(0 0 0 / 5%);
+}
+
+ .mat-form-field-label {
+  color: rgb(0 0 0 / 55%);
+}
+
+input.mat-input-element {
+  margin-top: 9px;
+  color: rgb(0 0 0 / 56%);
+}
+
+.mat-select-value {
+  color: rgb(0 0 0 / 56%);
+  padding-top: 7px;
+}
+
+.mat-select-disabled .mat-select-value {
+  color: rgb(0 0 0 / 56%);
+}
+
+.field{
+  color: rgba(0, 0, 0, 0.705);
+  label{
+      margin-right: 10px;
+      font-weight: 500;
+  }
+}
+
+.mat-input-element:disabled {
+  color: rgb(0 0 0 / 56%);
+}
+
+.mat-form-field {
+  line-height: 2;
+}
+
+.mat-divider{
+  padding-bottom: 12px;
+}
+
+.subtitle{
+  font-size: 17px;
+  font-weight: 500;
+  margin-bottom: 7px !important;
+}
+
+table.mat-table {
+  width: 100%;
+}
+
+.success-snackbar {
+  background: rgb(51, 112, 10);
+}
+
+.info-snackbar {
+  background: #2196f3;
+}
+
+.warning-snackbar {
+  background: rgb(248, 162, 3);
+}
+
+.danger-snackbar {
+  background: rgb(255, 72, 72);
+}
+
+.white-icon {
+  color: whitesmoke !important;
+}

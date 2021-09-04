@@ -1,0 +1,18 @@
+<main class="m-4 bg-white">
+  <div class="d-flex align-items-center justify-content-center search">
+    <div class="font-500 font-banner">Select a customer</div>
+    <button mat-icon-button (click)="selectCustomer()">
+      <mat-icon class="font-green">search</mat-icon>
+    </button>
+  </div> 
+  
+  <div class="mt-4 p-4" *ngIf="selectedCustomer">
+    <div class="row">
+      <div class="col-md-6">
+        <div customer-details [customer]="selectedCustomer"></div>
+        <div account-details [customer]="selectedCustomer"></div>
+      </div>
+      <div class="col-md-6" investment-vs-interest-collection-chart [customer]="selectedCustomer"></div>
+    </div>
+  </div>
+</main>

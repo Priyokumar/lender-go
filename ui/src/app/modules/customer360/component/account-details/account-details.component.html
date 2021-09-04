@@ -1,0 +1,90 @@
+<div class="mt-4" *ngIf="accounts$ | async as accounts">
+  <div class="subtitle">Account Details</div>
+  <mat-divider></mat-divider>
+  <div class="account" *ngFor="let account of accounts; let i = index; let c = count">
+    <div
+      class="floating-action d-flex justify-content-end align-items-center"
+      *ngIf="
+        account?.status !== accountStatus.REJECTED &&
+        account?.status !== accountStatus.CREATED
+      "
+    >
+      <button
+        mat-icon-button
+        matTooltip="Add Repayment"
+        (click)="repay(account)"
+        *ngIf="(roles | async)?.includes(userRole.INVESTOR)"
+      >
+        <mat-icon>post_add</mat-icon>
+      </button>
+      <button
+        mat-icon-button
+        matTooltip="View Repayment"
+        (click)="viewRepaymentList(account)"
+      >
+        <mat-icon>visibility</mat-icon>
+      </button>
+    </div>
+    <div class="row mt-3 mb-3">
+      <div class="col-md-6">
+        <div class="d-flex field">
+          <label>Account Number :</label>
+          <div>{{ account?.accountNo }}</div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="d-flex field">
+          <label>Amount :</label>
+          <div>{{ (account?.lead | async)?.amount }}</div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="d-flex field">
+          <label>Product Name :</label>
+          <div>{{ (account?.product | async)?.name }}</div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="d-flex field">
+          <label>Interest % :</label>
+          <div>{{ (account?.product | async)?.interest }}</div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="d-flex field">
+          <label>Frequency :</label>
+          <div>{{ (account?.product | async)?.frequency }}</div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="d-flex field">
+          <label>Monthly Interest :</label>
+          <div>{{ (account?.lead | async)?.monthlyInterest }}</div>
+        </div>
+      </div>
+      <div class="col-md-6 pt-2">
+        <div class="d-flex field">
+          <label>Status :</label>
+          <div
+            class="status"
+            [ngClass]="{
+              'warning-snackbar': account.status === accountStatus.CLOSED,
+              'success-snackbar': account.status === accountStatus.DISBURSED,
+              'info-snackbar': account.status === accountStatus.CREATED,
+              'danger-snackbar': account.status === accountStatus.REJECTED
+            }"
+          >
+            {{ account?.status }}
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="d-flex field">
+          <label>Status :</label>
+          <div>{{ account?.status }}</div>
+        </div>
+      </div>
+    </div>
+    <mat-divider *ngIf="i !== accounts.length - 1"></mat-divider>
+  </div>
+</div>

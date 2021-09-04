@@ -1,0 +1,63 @@
+@import '../../../../../assets/scss/control.scss';
+
+main {
+    height: calc(100vh - 36px);
+    overflow-y: auto;
+
+    .form-content{
+        padding: 10px 60px;
+        .heading{
+            font-size: 13px;
+            font-weight: 500;
+        }
+        .customer-product-content{
+            display: flex;
+            justify-content: space-between;
+            .field{
+                margin-bottom: 2px;
+            }
+            .search{
+                position: relative;
+                .tooltip-message{
+                    position: absolute;
+                    top: -16px;
+                    left: 23px;
+                    background-color: #0890f0;
+                    color: #ffffff;
+                    border-radius: 3px;
+                    padding: 0 8px;
+                    //box-shadow: -3px 9px 5px 0px rgba(196,196,196,0.75);
+                }
+                .tooltip-caret{
+                    position: absolute;
+                    color: #0890f0;
+                    top: -9px;
+                    left: 62px;
+                }
+            }
+
+            .customer, .lead, .product{
+                width: calc(100% / 3);
+            }
+            .lead{
+                padding-top: 9px;
+                label{
+                    font-size: 12px;
+                    font-weight: 500;
+                }
+            }
+            .select-text{
+                font-size: 13px;
+                font-weight: 500;
+            }
+            .spacer{
+                padding-top: 9px;
+            }
+            .input-container{
+                margin-bottom: 10px;
+            }
+        }
+    }
+
+   
+}

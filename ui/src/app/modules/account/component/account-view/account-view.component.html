@@ -1,0 +1,110 @@
+<div class="form-min-height m-3 bg-white">
+  <div class="d-flex justify-content-between p-1 ps-4 bg-gold">
+    <span class="font-400 font-banner" style="line-height: 35px">Account</span>
+    <div>
+      <button class="btn btn-save" routerLink="/accounts">
+        <mat-icon class="white-icon">list</mat-icon>&nbsp;Account List
+      </button>
+      <button
+        class="btn btn-edit"
+        [routerLink]="'/accounts/' + account?.id + '/edit'"
+      >
+        <mat-icon class="white-icon">edit</mat-icon>&nbsp;Edit
+      </button>
+      <!-- <button class="btn btn-cancel" (click)="delete()">
+        <mat-icon class="white-icon font-title-lg">delete</mat-icon>&nbsp;Delete
+      </button> -->
+    </div>
+  </div>
+
+  <div class="account-content">
+    <!-- Account -->
+    <div>
+      <div class="d-flex align-items-center justify-content-between heading mb-3">
+        <div class="title">Account</div>
+      </div>
+      <div class="d-flex field">
+        <label>Account Id :</label>
+        <div>{{ account?.leadId }}</div>
+      </div>
+      <div class="d-flex field">
+        <label>Account Status :</label>
+        <div>{{ account?.status }}</div>
+      </div>
+      <div class="d-flex field">
+        <label>Created At :</label>
+        <div>{{ account?.dateOfCreation }}</div>
+      </div>
+      <div class="d-flex field">
+        <a (click)="viewRepaymentList()" class="view-repayments">Vew Repayments</a>
+      </div>
+      
+    </div>
+    <!-- Lead -->
+    <div>
+      <div class="d-flex align-items-center heading mb-3">
+        <div class="title">Lead</div>
+      </div>
+      <div class="d-flex field">
+        <label>Lead Id :</label>
+        <div>{{ (account?.lead | async)?.leadId }}</div>
+      </div>
+      <div class="d-flex field">
+        <label>Status :</label>
+        <div>{{ (account?.lead | async)?.status }}</div>
+      </div>
+      <div class="d-flex field">
+        <label>Amount :</label>
+        <div>{{ (account?.lead | async)?.amount }}</div>
+      </div>
+      <div class="d-flex field">
+        <label>Monthly Interest to be paid :</label>
+        <strong>{{ (account?.lead | async)?.monthlyInterest }}</strong>
+      </div>
+    </div>
+    <!-- Customer -->
+    <div>
+      <div class="d-flex align-items-center heading mb-3">
+        <div class="title">Customer</div>
+      </div>
+      <div class="d-flex field">
+        <label>Customer Id :</label>
+        <div>{{ (account?.customer | async)?.customerId }}</div>
+      </div>
+      <div class="d-flex field">
+        <label>Customer Name :</label>
+        <div>{{ (account?.customer | async)?.name }}</div>
+      </div>
+      <div class="d-flex field">
+        <label>Gender :</label>
+        <div>{{ (account?.customer | async)?.gender }}</div>
+      </div>
+      <div class="d-flex field">
+        <label>Mobile Number :</label>
+        <div>{{ (account?.customer | async)?.mobileNo }}</div>
+      </div>
+    </div>
+    <!-- Product -->
+    <div>
+      <div class="d-flex align-items-center heading mb-3">
+        <div class="title">Product</div>
+      </div>
+      <div class="d-flex field">
+        <label>Product Id :</label>
+        <div>{{ (account?.product | async)?.productId }}</div>
+      </div>
+      <div class="d-flex field">
+        <label>Product Name :</label>
+        <div>{{ (account?.product | async)?.name }}</div>
+      </div>
+      <div class="d-flex field">
+        <label>Interest :</label>
+        <div>{{ (account?.product | async)?.interest }}</div>
+      </div>
+      <div class="d-flex field">
+        <label>Frequency :</label>
+        <div>{{ (account?.product | async)?.frequency }}</div>
+      </div>
+    </div>
+  </div>
+</div>
