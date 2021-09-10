@@ -11,12 +11,17 @@ import (
 // DB DB
 var DB *gorm.DB
 
+const (
+	userName string = "lender_prod"
+	password string = "lender_prod"
+	database string = "lender_prod"
+)
+
 // InitiateDB InitiateDB
 func InitiateDB() error {
 
 	log.Println("Initializing DB")
-	dsn := "host=localhost user=lender_prod password=lender_prod dbname=lender_prod port=5432 sslmode=disable"
-
+	dsn := "host=localhost user=" + userName + " password=" + password + " dbname=" + database + " port=5432 sslmode=disable"
 	db, err := gorm.Open(postgres.Open(dsn), &gorm.Config{})
 
 	db.AutoMigrate(
