@@ -1,1 +1,1 @@
-email=lender@prilax.in ./apis
+email=lender@prilax.in /root/lender-go/apis/apis
