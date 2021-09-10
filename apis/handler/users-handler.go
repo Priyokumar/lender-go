@@ -117,7 +117,7 @@ func sendWelcomeMail(user model.User, password string) {
 		"username": user.Email,
 		"password": password,
 	}
-	templatePath := "./mailer/template/welcome.html"
+	templatePath := mailer.TemplateFolder + "/welcome.html"
 
 	err := mailer.SendMail(to, "Welcome to Lender", data, templatePath)
 

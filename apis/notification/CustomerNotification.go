@@ -10,7 +10,7 @@ func SendCustomerWelcomeMail(customer model.Customer) {
 
 	to := []string{customer.Email}
 	data := map[string]string{"name": customer.Name}
-	templatePath := "./mailer/template/customer-welcome.html"
+	templatePath := mailer.TemplateFolder + "/customer-welcome.html"
 
 	fmt.Println("Sending welcome mail")
 

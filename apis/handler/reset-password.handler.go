@@ -55,7 +55,7 @@ func SendResetPasswordHandler(ctx *gin.Context) {
 func sendResetPasswordLinkMail(user model.User, password string) {
 	to := []string{user.Email}
 	data := map[string]string{"name": user.Name, "password": password}
-	templatePath := "./mailer/template/reset-password.html"
+	templatePath := mailer.TemplateFolder + "/reset-password.html"
 
 	fmt.Println("Sending reset password mail")
 

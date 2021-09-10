@@ -14,6 +14,9 @@ const (
 	password     = "Prilax@123"
 	smtpHost     = "smtpout.secureserver.net"
 	smtpPort int = 465
+
+	TemplateFolder string = "/root/lender-go/apis/mailer/template"
+	//TemplateFolder string = "/home/priyo/Desktop/lender-go/apis/mailer/template"
 )
 
 /* func SendMail(to []string, subject string, data map[string]string, templatePath string) error {

@@ -70,7 +70,7 @@ func sendChangePasswordMail(user model.User) {
 
 	to := []string{user.Email}
 	data := map[string]string{"name": "Priyo"}
-	templatePath := "./mailer/template/change-password.html"
+	templatePath := mailer.TemplateFolder + "/change-password.html"
 
 	fmt.Println("sending Change password mail")
 

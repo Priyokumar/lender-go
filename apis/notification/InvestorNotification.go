@@ -10,7 +10,7 @@ func SendInvestorWelcomeMail(investor model.Investor) {
 
 	to := []string{investor.Email}
 	data := map[string]string{"name": investor.Name}
-	templatePath := "./mailer/template/investor-welcome.html"
+	templatePath := mailer.TemplateFolder + "/investor-welcome.html"
 
 	fmt.Println("Sending welcome mail")
 

@@ -14,7 +14,7 @@ func SendUserWelcomeMail(user model.User, password string) {
 		"username": user.Email,
 		"password": password,
 	}
-	templatePath := "./mailer/template/user-welcome.html"
+	templatePath := mailer.TemplateFolder + "/user-welcome.html"
 
 	err := mailer.SendMail(to, "User Credentials", data, templatePath)
 
@@ -31,7 +31,7 @@ func SendAdminUserWelcomeMail(user model.User, password string) {
 		"username": user.Email,
 		"password": password,
 	}
-	templatePath := "./mailer/template/admin-welcome.html"
+	templatePath := mailer.TemplateFolder + "/admin-welcome.html"
 
 	err := mailer.SendMail(to, "Admin User Credentials", data, templatePath)
 
