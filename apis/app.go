@@ -21,7 +21,7 @@ func init() {
 	}
 
 	database.InitiateDB()
-	go helper.CreateAdminUser(email)
+	helper.CreateAdminUser(email)
 }
 
 func main() {

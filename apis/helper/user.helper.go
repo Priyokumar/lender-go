@@ -86,5 +86,5 @@ func CreateAdminUser(email string) {
 		return
 	}
 
-	go notification.SendAdminUserWelcomeMail(adminUser, password)
+	notification.SendAdminUserWelcomeMail(adminUser, password)
 }

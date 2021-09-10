@@ -1,1 +1,0 @@
-email=lender@prilax.in apis/apis
