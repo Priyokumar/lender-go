@@ -39,6 +39,6 @@ func main() {
 		ValidateHeaders: false,
 	})) */
 	config.SetupRoutes(routeEngine)
-	routeEngine.Run(port)
+	log.Fatalln(routeEngine.Run(port))
 
 }
