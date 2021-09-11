@@ -5,7 +5,6 @@ import (
 	"apis/database"
 	"apis/helper"
 	"log"
-	"os"
 
 	"github.com/gin-gonic/gin"
 )
@@ -15,7 +14,8 @@ const port string = ":80"
 func init() {
 
 	// Admin email
-	email := os.Getenv("email")
+	//email := os.Getenv("email")
+	email := "lender@prilax.in"
 	if email == "" {
 		log.Fatalln("Please set env for email.")
 	}
