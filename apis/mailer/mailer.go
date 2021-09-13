@@ -10,10 +10,10 @@ import (
 )
 
 const (
-	from         = "lender@prilax.in"
-	password     = "Prilax@123"
-	smtpHost     = "smtpout.secureserver.net"
-	smtpPort int = 465
+	from         = "**********"
+	password     = "**********"
+	smtpHost     = "**********"
+	smtpPort int = 0
 
 	TemplateFolder string = "/root/lender-go/apis/mailer/template"
 	//TemplateFolder string = "/home/priyo/Desktop/lender-go/apis/mailer/template"

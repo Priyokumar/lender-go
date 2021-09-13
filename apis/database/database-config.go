@@ -12,9 +12,9 @@ import (
 var DB *gorm.DB
 
 const (
-	userName string = "lender_prod"
-	password string = "lender_prod"
-	database string = "lender_prod"
+	userName string = "********"
+	password string = "********"
+	database string = "********"
 )
 
 // InitiateDB InitiateDB
